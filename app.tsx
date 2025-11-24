@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Sidebar } from './components/sidebar';
-import { TutorialCard } from './components/tutorialcard';
+import { Sidebar } from './components/Sidebar';
+// Perhatikan baris ini:
+import { TutorialCard } from './components/TutorialCard'; 
 import { TUTORIAL_DATA, YOUTUBE_LINK, DONATION_LINK, SKIN_WEB_LINK } from './constants';
 import { Menu, ArrowRight, Youtube, Heart, ExternalLink } from 'lucide-react';
 
@@ -32,7 +33,6 @@ const App: React.FC = () => {
       />
 
       <main className="flex-1 w-full relative flex flex-col min-w-0">
-        {/* Mobile Header */}
         <header className="lg:hidden sticky top-0 z-30 bg-slate-950/80 backdrop-blur-md border-b border-slate-800 px-4 py-3 flex items-center justify-between">
           <button 
             onClick={toggleSidebar}
@@ -47,10 +47,8 @@ const App: React.FC = () => {
         </header>
 
         <div className="flex-1 p-4 md:p-8 lg:p-12 max-w-5xl mx-auto w-full">
-          
           {activeTab === 'home' ? (
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-              {/* Hero Section */}
               <div className="flex flex-col items-center text-center py-12 md:py-20">
                 <div className="mb-6 relative">
                   <div className="absolute inset-0 bg-[#D20061] blur-3xl opacity-20 rounded-full"></div>
@@ -66,7 +64,6 @@ const App: React.FC = () => {
                 </p>
                 
                 <div className="flex flex-wrap flex-row justify-center w-full max-w-4xl gap-3">
-                  {/* Donation Button */}
                   <a 
                     href={DONATION_LINK} 
                     target="_blank" 
@@ -77,7 +74,6 @@ const App: React.FC = () => {
                     DONATION
                   </a>
 
-                  {/* YouTube Button */}
                   <a 
                     href={YOUTUBE_LINK} 
                     target="_blank" 
@@ -88,7 +84,6 @@ const App: React.FC = () => {
                     TUTORIAL LAINNYA
                   </a>
 
-                  {/* Skin CSPB Button */}
                   <a 
                     href={SKIN_WEB_LINK} 
                     target="_blank" 
@@ -101,7 +96,6 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              {/* Quick Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
                 {TUTORIAL_DATA.map((section, idx) => (
                   <div 
@@ -117,17 +111,13 @@ const App: React.FC = () => {
                     </div>
                     <h3 className="font-bold text-lg text-slate-200 group-hover:text-white mb-2">{section.title}</h3>
                     <p className="text-sm text-slate-500 group-hover:text-slate-400">
-                      {section.shortDescription || (
-                       section.type === 'config' ? 'Setting opengl dan config untuk performa.' : 
-                       section.type === 'script' ? 'Penjelasan detail script senjata.' : 
-                       section.type === 'steps' ? 'Langkah-langkah modding.' : 'Tutorial lengkap.')}
+                      {section.shortDescription || 'Klik untuk membaca tutorial selengkapnya.'}
                     </p>
                   </div>
                 ))}
               </div>
             </div>
           ) : (
-            // Specific Tutorial View
             <div key={activeTab} className="min-h-[60vh]">
               {activeData ? (
                 <TutorialCard data={activeData} />
