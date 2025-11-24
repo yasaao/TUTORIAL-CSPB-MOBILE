@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionData } from '../types';
-import { CodeSnippet } from './CodeSnippet';
+import { CodeSnippet } from './codesnippet';
 import { PlayCircle, Cpu, Settings, Image as ImageIcon, FileCode, Search, Download, ExternalLink } from 'lucide-react';
 import { YOUTUBE_LINK } from '../constants';
 
