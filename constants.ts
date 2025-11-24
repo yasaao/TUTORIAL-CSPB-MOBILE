@@ -159,13 +159,13 @@ export const TUTORIAL_DATA: SectionData[] = [
     steps: [
       "Siapkan screenshot atau file .mdl yang ingin dicek.",
       "Buka ChatGPT.",
-      "Upload gambar/file dan ketik prompt: 'Sebutkan nama texture hand dari model ini'.",
+      "Upload file .mdl dan ketik prompt: 'Saya memiliki sebuah file model Counter-Strike (.mdl), misalnya v_kriss_sv_crb.mdl. Tolong ekstrak dan tampilkan seluruh daftar nama texture yang ada di dalam file, baik untuk senjata maupun hand. Sertakan nama file gambar (.bmp, .tga, dll) serta identifier model (misalnya v_, w_, p_, Hand_). Buat daftar yang rapi agar mudah dipahami'.",
       "Tunggu AI menganalisis strukturnya."
     ]
   },
   {
     id: 'add-weapon',
-    title: '6. Menambah Weapon/Skin (V18+)',
+    title: '6. Menambah Weapon/Skin (V18/V20.1)',
     shortDescription: 'Cara menambahkan Senjata CSPB',
     type: 'video',
     content: "Tutorial ini khusus untuk CSPB V18 - V20.1. Pelajari lebih lanjut melalui playlist video."
