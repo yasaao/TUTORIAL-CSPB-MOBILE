@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Sidebar } from './components/Sidebar';
-import { TutorialCard } from './components/TutorialCard';
+import { Sidebar } from './components/sidebar';
+import { TutorialCard } from './components/tutorialcard';
 import { TUTORIAL_DATA, YOUTUBE_LINK, DONATION_LINK, SKIN_WEB_LINK } from './constants';
 import { Menu, ArrowRight, Youtube, Heart, ExternalLink } from 'lucide-react';
 
