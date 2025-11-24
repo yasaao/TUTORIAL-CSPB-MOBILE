@@ -1,6 +1,7 @@
 import React from 'react';
 import { SectionData } from '../types';
-import { CodeSnippet } from './codesnippet';
+// Pastikan import ini sama persis (C besar, S besar) dan satu folder
+import { CodeSnippet } from './CodeSnippet';
 import { PlayCircle, Cpu, Settings, Image as ImageIcon, FileCode, Search, Download, ExternalLink } from 'lucide-react';
 import { YOUTUBE_LINK } from '../constants';
 
@@ -31,14 +32,12 @@ export const TutorialCard: React.FC<TutorialCardProps> = ({ data }) => {
 
       <div className="bg-slate-900/40 border border-slate-800/60 rounded-2xl p-6 md:p-8 backdrop-blur-sm shadow-xl">
         
-        {/* Intro Content Text */}
         {data.content && (
           <div className="prose prose-invert max-w-none mb-6 text-slate-300 leading-relaxed whitespace-pre-wrap">
             {data.content}
           </div>
         )}
 
-        {/* Link Buttons (e.g., for Skin Download) */}
         {data.links && (
           <div className="flex flex-wrap gap-4 mb-8">
             {data.links.map((link, idx) => (
@@ -56,7 +55,6 @@ export const TutorialCard: React.FC<TutorialCardProps> = ({ data }) => {
           </div>
         )}
 
-        {/* Sub Sections for Configs */}
         {data.subSections?.map((sub, idx) => (
           <div key={idx} className="mb-8 last:mb-0">
             <h3 className="text-lg font-semibold text-[#ff80b3] mb-4 flex items-center gap-2">
@@ -71,7 +69,6 @@ export const TutorialCard: React.FC<TutorialCardProps> = ({ data }) => {
           </div>
         ))}
 
-        {/* Direct Items */}
         {data.items && (
           <div className="grid gap-2">
             {data.items.map((item, idx) => (
@@ -80,7 +77,6 @@ export const TutorialCard: React.FC<TutorialCardProps> = ({ data }) => {
           </div>
         )}
 
-        {/* Ordered Steps */}
         {data.steps && (
           <ol className="relative border-l border-slate-700 ml-3 space-y-6 mt-4">
             {data.steps.map((step, idx) => (
@@ -94,7 +90,6 @@ export const TutorialCard: React.FC<TutorialCardProps> = ({ data }) => {
           </ol>
         )}
 
-        {/* Video Type Special */}
         {data.type === 'video' && (
           <div className="mt-4 flex flex-col items-center justify-center p-8 bg-slate-800/30 rounded-xl border border-dashed border-slate-700">
             <p className="text-slate-400 mb-6 text-center max-w-md">
